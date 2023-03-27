@@ -1,10 +1,12 @@
 import express from 'express'
 import config from 'config'
-import { engine } from 'express-handlebars'
+import  engine  from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
+import  favicon  from 'serve-favicon'
+
 
 const app = express()
-
+app.use(favicon(path.join(__dirname,'/favicon.ico')))
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.set('views', './views')
@@ -22,7 +24,7 @@ app.get('/', (_, res) => {
 app.post('/', async (req, res) => {
   const code = req.body.content
   const content = `
-    What this code does? 
+    What this code does?
     ${code}
   `
 

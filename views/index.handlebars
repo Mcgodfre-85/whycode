@@ -1,36 +1,54 @@
-<div class="row no-gutters d-flex justify-content-between align-items-center px-1">
+<header class="row no-gutters d-flex justify-content-between align-items-center px-1">
   <div class="col logo">whycode.ai</div>
   <div class="col d-flex justify-content-end">
     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">About</button>
   </div>
-</div>
+</header>
 
-<form action='/' method='post'>
+
+
+
+<main>
+  <form action='/' method='post'>
   <div class="position-relative">
     <textarea class='form-control resize-none  my-3' placeholder='Paste your code here' required
       name='content'></textarea>
-    <div class="position-absolute bottom-5 end-5">
-      <button class='btn ' type='submit'>What?</button>
+    <div class="position-absolute bottom-0 end-0">
+      <button class='btn ' type='submit'><img src="../paper-plane.png" aria-hidden="true"></button>
     </div>
   </div>
+  </form>
 
-</form>
+  {{#if message}}
+  <hr />
+  <pre><code class='language-javascript bg-transparent'>{{code}}</code></pre>
+  <p class='callout callout-info'>{{message.content}}</p>
+  {{/if}}
+</main>
 
-{{#if message}}
-<hr />
-<pre><code class='language-javascript bg-transparent'>{{code}}</code></pre>
-<p class='callout callout-info'>{{message.content}}</p>
-{{/if}}
+
+<footer class="row no-gutters">
+  
+    <span class="text-center fw-lighter">Our goal is to make AI systems to be your mentor in coding. Your
+      feedback will help us improve.<br>
+      whycode.ai 2023 </span>
+
+</footer>
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        Here is some text about me and about this project
-        ...
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div>
+          Here is some text about me and about this project
+          ...
+        </div>
+
       </div>
 
     </div>
@@ -40,6 +58,11 @@
 
 
 <style>
+main {
+  min-height: 80%;
+  margin: 0 0 30px 0;
+}
+
   textarea {
     resize: none;
   }
