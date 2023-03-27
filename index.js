@@ -21,16 +21,19 @@ app.get('/', (_, res) => {
   res.render('index')
 })
 
+
 app.post('/', async (req, res) => {
+  let loading = true
   const code = req.body.content
   const content = `
     What this code does?
     ${code}
   `
-
+  
   const messages = [{ role: 'user', content }]
 
   try {
+    
     const completion = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages,
@@ -39,7 +42,9 @@ app.post('/', async (req, res) => {
     res.render('index', {
       code,
       message: completion.data.choices[0].message,
+      loading = false
     })
+
   } catch (e) {
     console.error(e)
   }

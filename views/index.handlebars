@@ -1,22 +1,17 @@
-<header class="row no-gutters d-flex justify-content-between align-items-center px-1">
-  <div class="col logo">whycode.ai</div>
-  <div class="col d-flex justify-content-end">
-    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">About</button>
-  </div>
+<header class="row no-gutters d-flex justify-content-center align-items-center px-1">
+  <span class="logo">whycode.ai</span>
+  <span class="text-center fw-lighter">Empowering developers with AI mentorship for flawless code understanding</span>
 </header>
-
-
-
 
 <main>
   <form action='/' method='post'>
-  <div class="position-relative">
-    <textarea class='form-control resize-none  my-3' placeholder='Paste your code here' required
-      name='content'></textarea>
-    <div class="position-absolute bottom-0 end-0">
-      <button class='btn ' type='submit'><img src="../paper-plane.png" aria-hidden="true"></button>
+    <div class="position-relative">
+      <textarea class='form-control resize-none  my-3' placeholder='Paste your code here' required
+        name='content'></textarea>
+      <div class="position-absolute bottom-0 end-0">
+        <button class='btn p-2' type='submit'>Send</button>
+      </div>
     </div>
-  </div>
   </form>
 
   {{#if message}}
@@ -24,51 +19,40 @@
   <pre><code class='language-javascript bg-transparent'>{{code}}</code></pre>
   <p class='callout callout-info'>{{message.content}}</p>
   {{/if}}
+
 </main>
 
 
-<footer class="row no-gutters">
-  
-    <span class="text-center fw-lighter">Our goal is to make AI systems to be your mentor in coding. Your
-      feedback will help us improve.<br>
-      whycode.ai 2023 </span>
+<footer class="row no-gutters text-center fw-lighter">
+
+  <span>Our goal is to develop AI systems that can serve as your coding mentor. We welcome your feedback to enhance our
+    efforts. Find more information <a href="">here</a>. </span>
+
+
+  <span>whycode.ai 2023 </span>
+
+  <span></span>
+
 
 </footer>
 
 
-<!-- Modal -->
-<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div>
-          Here is some text about me and about this project
-          ...
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
 
 <style>
-main {
-  min-height: 80%;
-  margin: 0 0 30px 0;
-}
+  main {
+    min-height: 50%;
+    margin: 100px auto;
+    max-width: 1100px;
+
+  }
 
   textarea {
     resize: none;
   }
 
   textarea::placeholder {
-    font-size: 33px;
+    font-size: 32px;
+    letter-spacing: -2px;
   }
 
   a {
@@ -76,6 +60,20 @@ main {
   }
 
   .logo {
-    font-size: 48px
+    font-size: 58px;
+    text-align: center;
+    letter-spacing: -3px;
+    font-weight: 600;
+    opacity: 0.8;
+
+  }
+
+  button {
+    margin: 0 10px 9px 0;
+    background-color: rgb(226, 226, 226) !important
+  }
+
+  button:hover {
+    background-color: rgb(209, 209, 209) !important
   }
 </style>
