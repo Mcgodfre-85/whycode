@@ -1,41 +1,23 @@
-<header class="row no-gutters d-flex justify-content-center align-items-center px-1">
-  <span class="logo">whycode.ai</span>
-  <span class="text-center fw-lighter">Empowering developers with AI mentorship for flawless code understanding</span>
-</header>
-
-<main>
-  <form action='/' method='post'>
-    <div class="position-relative">
-      <textarea class='form-control resize-none  my-3' placeholder='Paste your code here' required
-        name='content'></textarea>
-      <div class="position-absolute bottom-0 end-0">
-        <button class='btn p-2' type='submit'>Send</button>
-      </div>
+<form action='/' method='post'>
+  <div class="position-relative">
+    <textarea class='form-control resize-none my-3' placeholder='Paste your code here' required
+      name='content'></textarea>
+    <div class="position-absolute bottom-0 end-0">
+      <button class='btn p-2' type='submit'>Send</button>
     </div>
-  </form>
+  </div>
+</form>
 
-  {{#if message}}
-  <hr />
-  <pre><code class='language-javascript bg-transparent'>{{code}}</code></pre>
-  <p class='callout callout-info'>{{message.content}}</p>
-  {{/if}}
+{{#if message}}
+<hr />
+<pre><code class='language-javascript bg-transparent'>{{code}}</code></pre>
+<hr />
+<p class='callout callout-info'>{{message.content}}</p>
 
-</main>
-
-
-<footer class="row no-gutters text-center fw-lighter">
-
-  <span>Our goal is to develop AI systems that can serve as your coding mentor. We welcome your feedback to enhance our
-    efforts. Find more information <a href="">here</a>. </span>
-
-
-  <span>whycode.ai 2023 </span>
-
-  <span></span>
-
-
-</footer>
-
+{{/if}}
+{{#if errorMessage}} 
+<p class='callout callout-info'>{{errorMessage}}</p>
+{{/if}}
 
 
 <style>
@@ -43,7 +25,6 @@
     min-height: 50%;
     margin: 100px auto;
     max-width: 1100px;
-
   }
 
   textarea {
@@ -56,7 +37,8 @@
   }
 
   a {
-    color: #000
+    all: unset;
+    cursor: pointer
   }
 
   .logo {
@@ -65,7 +47,7 @@
     letter-spacing: -3px;
     font-weight: 600;
     opacity: 0.8;
-
+    cursor: pointer
   }
 
   button {
@@ -76,4 +58,5 @@
   button:hover {
     background-color: rgb(209, 209, 209) !important
   }
+
 </style>
