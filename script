@@ -1,0 +1,85 @@
+
+    let js = "amazing";
+    if(js === "amazing") alert("javascript is fun!");
+
+    let firstName = "josiah";
+    console.log(firstName); 
+
+    let secondName = "mary";
+    console.log(secondName);
+
+    console.log(typeof true);
+    console.log(typeof secondName);
+    console.log(typeof 45);
+    console.log(typeof 'true');
+
+    let myDay = "thursday";
+    if(myDay === "thursday") console.log("today is among the best days in ma life");
+   
+   const jonasAge = 2024 - 1987;
+   const janethAge = 2023 - 1895;
+   console.log(jonasAge, janethAge);
+
+   let a = 5, b =10,c;
+   c = a+b;
+   a+=c;
+   c++;
+   console.log(c);
+   c--;
+   console.log(c);
+   console.log(jonasAge <= janethAge);
+
+let mass , height;
+let massMark = 50 , massJohn = 60;
+let heightMark = 1.5 , heightJohn= 2;
+let markBmi = massMark / (heightMark ** 2);
+let JohnBmi = massMark / (heightJohn * heightJohn);
+
+console.log("mark's BMI is " , markBmi);
+console.log("John'sBMI is " , JohnBmi);
+
+if(markBmi > JohnBmi)console.log("Mark has the greater BMI");
+else console.log("John has the greater BMI")
+
+const firstName = "jack";
+const job = "programing";
+const birthDay = 2005;
+const currentYear = 2024;
+
+const jack = "i am " + firstName + " my job is " + job + " also am " + (currentYear - birthDay) + " years old! ";
+
+console.log(jack);
+const josePhine = `i am ${firstName } my job is ${job} also am ${currentYear - birthDay} years old`;
+console.log(josePhine);
+const josePine = `my name is josephine and i have a son called josiah also his father is called godfrey rusanyu`;
+console.log(josePine);
+
+console.log(`mama yangu ni mama
+mzuri sana ambaye nimewahi kuwa naye maishani 
+mwangu`)
+
+
+let currentAge = 35;
+let driveAge = currentAge >= 18;
+
+if(driveAge){
+    console.log(`your age is legible for having a drving license!`);
+}else{
+    console.log(`your age is not legible for having a driving license!`);
+}
+
+
+let myName = 85;
+let myAdrress = 1995;
+let myAge = `45`;
+
+console.log(string=(myName));
+console.log(myAdrress);
+console.log(number=(`45`));
+
+let money = undefined;
+if(money){
+    console.log(`dont use it all`);
+}else{
+    console.log(`go to find the job`);
+} 
